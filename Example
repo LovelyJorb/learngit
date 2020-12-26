@@ -1,0 +1,31 @@
+#include <stdio.h> 
+void main()
+{
+  Flight * p1;
+  char c;
+  p1=Head;
+  system("color 1f");                            //屏幕颜色设定
+  system("mode con: cols=78 lines=35"); 
+  do{
+       system("cls");
+       printf("\n\t\t             航空客运订票系统主菜单\n"); 
+       printf("\n****************************************************************\n"); 
+       printf("\t                 1.航 班 管 理 菜 单\n");
+       printf("\t                 2.订 票 办 理 菜 单\n");
+       printf("\t                 3.退 票 办 理 菜 单\n");
+       printf("\t                 4.乘 客 管 理 菜 单\n");
+        printf("\t                 5.退 出 系 统\n");
+       printf("\n*****************谢谢使用航空客运订票系统！*********************\n");
+       printf("请选择您想要的服务:");
+         scanf("%s",&c);
+         switch(c)
+		 {
+            case '1':  LinemanageMenu();break;           //航班管理 
+            case '2':  bookingMenu();break;              //订票办理 
+            case '3':  RefundticketMenu();break;         //退票办理
+            case '4':  CustomermagMenu();break;          //乘客管理
+            case '5':  exit(0);    
+            default:   break;
+		 }
+  }while(c!='5');
+}
